@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<report name="report_extSimpleDoc">
+    <templates>
+        <template code="DEFAULT" documentName="template_extSimpleDoc.docx" documentPath="template_extSimpleDoc.docx" outputType="docx" outputNamePattern="report_extSimpleDoc.docx"/>
+    </templates>
+    <formats>
+    </formats>
+    <rootBand name="Root" orientation="H">
+        <bands>
+            <band name="extSimpleDoc" orientation="H">
+                <queries>
+                    <query name="extSimpleDoc" type="json">
+                        <script>
+                            parameter=param1 $.extSimpleDoc
+                        </script>
+                    </query>
+                </queries>
+            </band>
+            <band name="correspondentList" orientation="H">
+                <queries>
+                    <query name="correspondentList" type="json">
+                        <script>
+                            parameter=param1 $.correspondentList
+                        </script>
+                    </query>
+                </queries>
+            </band>
+        </bands>
+        <queries/>
+    </rootBand>
+</report>
