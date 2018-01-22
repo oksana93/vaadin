@@ -13,15 +13,15 @@ import java.util.List;
 public interface IDocumentMapper extends Repository {
     final String getDocuments = "SELECT * FROM Document d";
     final String getDocumentById = "SELECT * FROM Document d WHERE d.id = #{id}";
-    final String insertDocument = "INSERT INTO Document (id,name,date) VALUES (nextval('idGenerator'),#{name},#{date})";
-    final String updateDocument = "UPDATE Document SET name = #{name}, date = #{date} WHERE id = #{id}";
+    final String insertDocument = "INSERT INTO Document (id,name,d_date) VALUES (nextval('idGenerator'),#{name},#{date})";
+    final String updateDocument = "UPDATE Document SET name = #{name}, d_date = #{date} WHERE id = #{id}";
     final String deleteDocumentById = "DELETE FROM Document WHERE id = #{id}";
 
     @Select(getDocumentById)
     @Results(value = {
             @Result(property = "id", column = "ID"),
             @Result(property = "name", column = "NAME"),
-            @Result(property = "date", column = "DATE")
+            @Result(property = "date", column = "D_DATE")
     })
     Document getDocumentById(BigInteger id);
 
@@ -29,7 +29,7 @@ public interface IDocumentMapper extends Repository {
     @Results(value = {
             @Result(property = "id", column = "ID"),
             @Result(property = "name", column = "NAME"),
-            @Result(property = "date", column = "DATE")
+            @Result(property = "date", column = "D_DATE")
     })
     List<Document> getDocuments();
 

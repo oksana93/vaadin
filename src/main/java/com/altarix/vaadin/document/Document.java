@@ -1,9 +1,7 @@
 package com.altarix.vaadin.document;
 
-import org.springframework.data.annotation.Id;
-
 import java.math.BigInteger;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by moshi on 25.10.2017.
@@ -23,8 +21,9 @@ public class Document {
         return date;
     }
 
-    public void setDate(Date date) {
+    public Document setDate(Date date) {
         this.date = date;
+        return this;
     }
 
     public Document(BigInteger id, String name, Date date) {
@@ -33,16 +32,18 @@ public class Document {
         this.date = date;
     }
 
-    public void setId(BigInteger id) {
+    public Document setId(BigInteger id) {
         this.id = id;
+        return this;
     }
 
     public BigInteger getId() {
         return id;
     }
 
-    public void setName(String name) {
+    public Document setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getName() {
